@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <title>Spring JPA</title>
+    <meta charset="UTF-8">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-select-1.13.9/dist/css/bootstrap-select.css}" />
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        /* Agregar estilos CSS personalizados aquí */
+        .search-form {
+            margin-top: 10px; /* Ajusta el espacio entre las dos formas de búsqueda */
+        }
+
+        .search-form input {
+            margin-right: 5px; /* Ajusta el espacio entre el campo de búsqueda y el botón */
+        }
+
+        .search-btn-empleados {
+            background-color: #28a745; /* Color verde para el botón de búsqueda de empleados */
+        }
+
+        .search-btn-tareas {
+            background-color: #17a2b8; /* Color azul para el botón de búsqueda de tareas */
+        }
+    </style>
+</head>
+
+<body>
+    <div th:fragment="menu">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="btn btn-secondary btn-lg" href="/listarEmpleados">Tabla Empleados<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="btn btn-info btn-lg" href="/listarTareas">Tabla Tareas<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="btn btn-warning btn-lg" href="#">Asignar Tareas<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <div class="search-form">
+                        <form th:action="@{/buscarEmpleados}" method="GET" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..."
+                                aria-label="Buscar" name="nombre" style="width: 420px;">
+                            <button class="btn btn-secondary  my-2 my-sm-0 search-btn-empleados" type="submit">Buscar Empleado
+                            </button>
+                        </form>
+                        <form th:action="@{/buscarTareas}" method="GET" class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Buscar"
+                                name="descripcion" style="width: 420px;">
+                            <button class="btn btn-warning  my-2 my-sm-0 search-btn-tareas" type="submit">Buscar Tarea</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
+
