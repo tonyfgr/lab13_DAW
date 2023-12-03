@@ -59,6 +59,9 @@
                             <button class="btn btn-warning  my-2 my-sm-0 search-btn-tareas" type="submit">Buscar Tarea</button>
                         </form>
                     </div>
+                    <form th:action="@{/logout}" method = "post">
+						<input class ="btn btn-danger" type = "submit" value = "cerrar Sesion"/>
+					</form>
                 </div>
             </nav>
         </div>
